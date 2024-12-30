@@ -1,17 +1,16 @@
-# Brain-Tumor-Classification
+# Brain Tumor Classification with Deep Learning
 
-In this program, I read in MRI pictures, stored on my laptop.
-I use the kaggle dataset "Brain Tumor MRI dataset"
+This repository contains a deep learning model for classifying brain tumors using MRI images. The model is trained on a dataset of brain MRI scans and can classify tumors into four categories: glioma, meningioma, pituitary, and no tumor.
 
+## Dataset
 
-Each picture is getting transformed into grayscale as well as reshaped into a one-dimensional array.
-Additionally, the grayscale values of the pixels is scaled to be between 0 and 1.
-Now each array of pixel values (=each picture) is added to a list. Another list is created where the labels are stored.
-The indeices of one picture and its label are equal.
-This process is done with training data. 
+The dataset used in this project is a collection of brain MRI scans obtained from Kaggle (https://www.kaggle.com/datasets/masoudnickparvar/brain-tumor-mri-dataset). It consists of images belonging to four different classes: glioma, meningioma, pituitary, and no tumor. The images are preprocessed and converted into NumPy arrays for efficient loading and training. Each picture is getting transformed into grayscale, reshaped into a one-dimensional array, and normalized.
 
-I use a SVM - SVC (Support Vector Classifier) as my estimator. 
-Additionally I use gridsearch, to determine the best settings for the SVC.
-The program can be tested with the testing data of the trainings set, which are read in, in the same way as the training data.
+## Model
 
-In the future, I am interested in the optimization of the classification as well as knowledge extraction through clustering.
+The model is a feedforward neural network implemented using PyTorch. It consists of three fully connected layers with batch normalization and regularization methods such as dropout layers, Kaiming, and weight-decay. The model is trained using the Adam optimizer and cross-entropy loss function.
+
+## SVM Classifier
+
+Originally, I developed a pipeline with scikit learn that utilized a SVM classifier. Parameters were optimized through gridsearch and I applied cross validation.
+
